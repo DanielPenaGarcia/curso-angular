@@ -10,19 +10,26 @@ export class EmpleadoComponent implements OnInit{
   nombre = "Juan";
   apellido = "Díaz";
   private edad = 18;
-  empresa = "";
+  empresa = "Google";
   habilitacionCuadro = false;
   usuRegistrado = true; 
+  textoDeRegistro = "No hay nadie registrado";
 
   getRegistradoUsuario(){
-    this.usuRegistrado = true;
+    this.usuRegistrado = false;
+  }
+
+  setUsuarioRegistrado(event : Event){
+    if((<HTMLInputElement>event.target).value === 'si'){
+      this.textoDeRegistro = "El usuario se acaba de registrar";
+    }else{
+      this.textoDeRegistro = "No hay nadie registrado";
+    }
   }
 
   getEdad(){
     return this.edad;
   }
-
-
 
   constructor(){
 

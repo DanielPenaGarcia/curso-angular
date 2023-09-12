@@ -3,11 +3,29 @@
 <form>
 
 
-  <input type="text" name="nombre" placeholder="Nombre"> <br><br>
+  <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre"> <br><br>
 
-  <input type="text" name="apellido" placeholder="Apellido"> <br><br>
+  <input type="text" name="apellido" placeholder="Apellido" [(ngModel)]="apellido"> <br><br>
 
-  <input type="submit" value="Registrar">
+  <input type="submit" value="Registrar" (click)="registrarUsuario()">
 
 
 </form>
+<br>
+<p *ngIf="registrado; else sinRegistrar">{{mensaje}}, con el nombre de {{nombre}} {{apellido}}</p>
+
+<ul>
+
+  <li *ngFor="let entrada of entradas; let i = index;"><span style="font-size: larger; font-weight: bold;">{{entrada.tittle}}</span>
+    . Entrada {{i+1}}
+  </li>
+  
+
+</ul>
+
+<ng-template #sinRegistrar>
+
+  <p>Nadie se ha registrado</p>
+
+</ng-template>
+

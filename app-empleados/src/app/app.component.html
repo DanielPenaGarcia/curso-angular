@@ -16,7 +16,8 @@
     </div>
     <div class="form-group col-md-3">
       <label for="nombre">Apellido: </label>
-      <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control" [(ngModel)]="cuadroApellido">
+      <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control"
+        [(ngModel)]="cuadroApellido">
     </div>
     <div class="form-group col-md-3">
       <label for="nombre">Cargo: </label>
@@ -24,7 +25,8 @@
     </div>
     <div class="form-group col-md-3">
       <label for="nombre">Salario: </label>
-      <input type="text" name="salario" id="salario" placeholder="Salario" class="form-control" [(ngModel)]="cuadroSalario">
+      <input type="text" name="salario" id="salario" placeholder="Salario" class="form-control"
+        [(ngModel)]="cuadroSalario">
     </div>
   </form>
   <br><br>
@@ -34,10 +36,6 @@
 
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div *ngFor="let empleado of empleados; let i = index">{{i+1}}. {{empleado.getNombreCompleto()}}</div>
-    </div>
-  </div>
+<div>
+  <app-empleado-hijo-component *ngFor="let empleado of empleados; let i = index" [empleadoDeLista]="empleado" [indice]="i"></app-empleado-hijo-component>
 </div>

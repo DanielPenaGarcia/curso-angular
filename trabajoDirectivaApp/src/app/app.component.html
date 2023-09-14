@@ -7,12 +7,15 @@
 
   <input type="text" name="apellido" placeholder="Apellido" [(ngModel)]="apellido"> <br><br>
 
+  <input type="text" name="cargo" placeholder="Cargo" [(ngModel)]="cargo"> <br><br>
+
   <input type="submit" value="Registrar" (click)="registrarUsuario()">
 
 
 </form>
 <br>
-<p *ngIf="registrado; else sinRegistrar">{{mensaje}}, con el nombre de {{nombre}} {{apellido}}</p>
+<p *ngIf="registrado; else sinRegistrar">{{mensaje}}, con el nombre de {{nombre}} {{apellido}}, 
+  con cargo de <span [ngClass]="{paraDirectores: isDirector()}">{{cargo}}</span></p>
 
 <ul>
 

@@ -13,22 +13,27 @@ export class AppComponent {
   registrado = false;
   nombre = '';
   apellido = '';
-  entradas : any[];
+  cargo: string = "";
+  entradas: any[];
 
-  constructor(){
+  constructor() {
     this.entradas = [
-      {tittle:"python cada día más presente"},
-      {tittle:"Java presente hace más de 20 años"},
-      {tittle:"JavaScript cada vez más funcional"},
-      {tittle:"Kotlin potencia para tus apps"},
-      {tittle:"¿Dónde quédo pascal?"}
+      { tittle: "python cada día más presente" },
+      { tittle: "Java presente hace más de 20 años" },
+      { tittle: "JavaScript cada vez más funcional" },
+      { tittle: "Kotlin potencia para tus apps" },
+      { tittle: "¿Dónde quédo pascal?" }
     ];
   }
-  
 
-  registrarUsuario(){
+
+  registrarUsuario() {
 
     this.registrado = true;
     this.mensaje = "Usuario registrado con éxito";
+  }
+
+  isDirector(): boolean {
+    return this.cargo.toLowerCase() === "director";
   }
 }

@@ -15,6 +15,8 @@ export class AppComponent {
   cuadroCargo:string = "";
   cuadroSalario:number = 0;
 
+
+
   empleados:Empleado[] = [
     new Empleado("Daniel", "Peña", "Presidente", 8500),
     new Empleado("Emir", "Borbón", "Director", 5500),
@@ -32,5 +34,11 @@ export class AppComponent {
     this.cuadroApellido = "";
     this.cuadroCargo = "";
     this.cuadroSalario = 0;
+  }
+
+  arrayCaracteristicas = [""];
+
+  agregarCaracteristica(value:string){
+    this.arrayCaracteristicas.push(value);
   }
 }

@@ -11,6 +11,12 @@ export class EmpleadoHijoComponentComponent {
   @Input() empleadoDeLista : Empleado;
   @Input() indice: number;
 
+  arrayCaracteristicas = [""];
+
+  agregarCaracteristica(value:string){
+    this.arrayCaracteristicas.push(value);
+  }
+
   constructor(){
 
   }
